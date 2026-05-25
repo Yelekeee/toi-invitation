@@ -3,7 +3,7 @@
 
   // ====== CONFIG ======
   const WEDDING_DATE = new Date("2026-08-08T18:00:00+05:00"); // +05:00 = Almaty time
-  const BACKEND_URL = ""; // TODO: өз Google Sheets backend URL қосыңыз
+  const BACKEND_URL = "https://script.google.com/macros/s/AKfycbyDZecGAujfX-onEdtJy0WMXO-w7vAb6yW5VEn-XsKMLmk5roDsk_yNMKJ3SvLHbgwTAw/exec";
   const AUDIO_VOLUME = 0.3;
 
   // ====== ELEMENTS ======
