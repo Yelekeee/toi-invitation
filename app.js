@@ -134,12 +134,8 @@
         console.log("RSVP (dev, backend-URL жоқ):", data);
         await new Promise((r) => setTimeout(r, 600));
       } else {
-        await fetch(BACKEND_URL, {
-          method: "POST",
-          mode: "no-cors",
-          headers: { "Content-Type": "text/plain;charset=utf-8" },
-          body: JSON.stringify(data)
-        });
+        const params = new URLSearchParams(data).toString();
+        await fetch(BACKEND_URL + "?" + params, { mode: "no-cors" });
       }
 
       form.hidden = true;
