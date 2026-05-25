@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="theme-color" content="#1a1410" />
+  <title>Асхат & Қарақат — Тойға шақырту</title>
+  <meta name="description" content="08 тамыз 2026, 18:00. Асхат пен Қарақаттың үйлену тойына шақыртуымыз." />
+  <meta property="og:title" content="Асхат & Қарақат — Тойға шақырту" />
+  <meta property="og:description" content="08.08.2026 · 18:00 · Сіздің қатысуыңыз біз үшін үлкен қуаныш" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- OPENING OVERLAY -->
+  <section id="intro" class="intro" aria-label="Шақыртуды ашу">
+    <div class="intro__inner">
+      <div class="ornament ornament--top" aria-hidden="true"></div>
+      <p class="intro__kicker">Тойға шақырту</p>
+      <h1 class="intro__names">
+        <span>Асхат</span>
+        <span class="amp">&amp;</span>
+        <span>Қарақат</span>
+      </h1>
+      <p class="intro__date">08 тамыз 2026 · 18:00</p>
+      <p class="intro__greeting" id="intro-greeting"></p>
+      <button type="button" id="openBtn" class="btn btn--primary">Шақыртуды ашу</button>
+      <p class="intro__hint">дыбыс қосылады</p>
+      <div class="ornament ornament--bottom" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- MAIN INVITATION -->
+  <main id="main" class="main" hidden>
+
+    <header class="hero">
+      <p class="hero__kicker">Қадірлі қонақ</p>
+      <p class="hero__parents">Қази & Айгүл</p>
+      <h1 class="hero__names">
+        Асхат
+        <span class="hero__amp">&amp;</span>
+        Қарақат
+      </h1>
+      <p class="hero__sub">үйлену тойымызға шақырамыз</p>
+      <div class="hero__divider" aria-hidden="true"></div>
+      <p class="hero__date">
+        <span>08</span>
+        <span class="hero__month">тамыз</span>
+        <span>2026</span>
+      </p>
+      <p class="hero__time">Сағат 18:00</p>
+    </header>
+
+    <section class="invitation">
+      <p>
+        Өмірдегі ең қуанышты сәтімізді Сізбен бөлісу —
+        біз үшін үлкен мәртебе.
+      </p>
+      <p>
+        Сіздің қатысуыңыз тойымыздың нұрын одан сайын арттырады.
+      </p>
+    </section>
+
+    <section class="venue">
+      <h2 class="section__title">Той орны</h2>
+      <p class="venue__city">Қызылорда</p>
+      <p class="venue__name" id="venueName">Samgau тойханасы</p>
+      <p class="venue__address" id="venueAddress"></p>
+      <a class="venue__map" id="venueMap" href="https://2gis.kz/kyzylorda/geo/70000001062750558" target="_blank" rel="noopener">Картадан көрсету →</a>
+    </section>
+
+    <section class="countdown" aria-label="Кері санақ">
+      <h2 class="section__title">Тойға дейін</h2>
+      <div class="countdown__grid">
+        <div><strong id="cdDays">—</strong><span>күн</span></div>
+        <div><strong id="cdHours">—</strong><span>сағат</span></div>
+        <div><strong id="cdMins">—</strong><span>минут</span></div>
+        <div><strong id="cdSecs">—</strong><span>секунд</span></div>
+      </div>
+    </section>
+
+    <section class="rsvp">
+      <h2 class="section__title">Қатысуыңызды растаңыз</h2>
+      <p class="rsvp__hello" id="rsvpHello"></p>
+
+      <form id="rsvpForm" class="form" novalidate>
+        <label class="field">
+          <span class="field__label">Аты <em>*</em></span>
+          <input type="text" name="firstName" id="firstName" required autocomplete="given-name" />
+        </label>
+
+        <label class="field">
+          <span class="field__label">Тегі <em>*</em></span>
+          <input type="text" name="lastName" id="lastName" required autocomplete="family-name" />
+        </label>
+
+        <label class="field">
+          <span class="field__label">Кім боп келесіз? <em>*</em></span>
+          <input type="text" name="section" id="section" required maxlength="80" placeholder="мыс. Күйеу жігіттің досы" />
+        </label>
+
+        <label class="field field--checkbox">
+          <input type="checkbox" name="withPartner" id="withPartner" />
+          <span>Жұбайыммен / серігіммен келемін</span>
+        </label>
+
+        <label class="field field--radio">
+          <span class="field__label">Келе аласыз ба?</span>
+          <div class="radio-group">
+            <label><input type="radio" name="attending" value="Иә" checked /><span>Иә, келемін</span></label>
+            <label><input type="radio" name="attending" value="Жоқ" /><span>Өкінішке орай, келе алмаймын</span></label>
+          </div>
+        </label>
+
+        <label class="field">
+          <span class="field__label">Қосымша хабарлама <em class="muted">(міндетті емес)</em></span>
+          <textarea name="message" id="message" rows="3" placeholder="Тілек, ескерту..."></textarea>
+        </label>
+
+        <button type="submit" class="btn btn--primary" id="submitBtn">Растау</button>
+        <p class="form__error" id="formError" hidden></p>
+      </form>
+
+      <div class="rsvp__success" id="rsvpSuccess" hidden>
+        <div class="success__mark" aria-hidden="true">✓</div>
+        <h3>Рақмет!</h3>
+        <p>Жауабыңыз қабылданды. Сізді тойда күтеміз!</p>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <div class="ornament ornament--bottom" aria-hidden="true"></div>
+      <p>Асхат &amp; Қарақат · 08.08.2026</p>
+    </footer>
+
+  </main>
+
+  <!-- MUSIC TOGGLE -->
+  <button type="button" id="musicToggle" class="music-toggle" aria-label="Музыканы өшіру/қосу" hidden>
+    <span class="music-toggle__on" aria-hidden="true">♪</span>
+    <span class="music-toggle__off" aria-hidden="true">✕</span>
+  </button>
+
+  <audio id="bgAudio" preload="auto" loop>
+    <source src="assets/jar-jar.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="app.js"></script>
+</body>
+</html>
